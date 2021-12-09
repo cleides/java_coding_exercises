@@ -1,7 +1,6 @@
 package com.techreturners.exercise001;
 
 import java.util.List;
-import java.util.Locale;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
@@ -12,8 +11,7 @@ public class Exercise001 {
     public String generateInitials(String firstName, String lastName) {
         String firstNameInit = firstName.substring(0, 1);
         String lastNameInit = lastName.substring(0, 1);
-        String initials = firstNameInit + "." + lastNameInit;
-        return initials;
+        return firstNameInit + "." + lastNameInit;
     }
 
     public double addVat(double originalPrice, double vatRate) {
@@ -29,7 +27,14 @@ public class Exercise001 {
     }
 
     public int countLinuxUsers(List<User> users) {
-        // Add your code here
-        return 0;
+        int count = 0;
+        //I had used the for loop but IntelliJ suggested this improvement.
+        for (User u : users) {
+            String osType = u.getType();
+            if (osType.equals("Linux")) {
+                count++;
+            }
+        }
+        return count;
     }
 }
