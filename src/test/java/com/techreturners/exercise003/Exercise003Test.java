@@ -2,9 +2,8 @@ package com.techreturners.exercise003;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Ignore;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class Exercise003Test {
 
@@ -39,14 +38,19 @@ public class Exercise003Test {
         assertEquals(expected, ex003.getIceCreamCode(iceCreamFlavour));
     }
 
-    
     @Test
-    public void checkPickMultipleIceCreamFlavours() {
+    public void checkGetIceCreamCodeForPistachio() {
+        int expected = 0;
+        int actual = ex003.getIceCreamCode("Pistachio");
 
-        String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
-
-        assertEquals(expected, ex003.iceCreamFlavours());
+        assertEquals(expected, actual);
     }
 
+    @Test
+    public void checkPickMultipleIceCreamFlavours() {
+        String[] expected = { "Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip", "Chocolate", "Mango Sorbet" };
+        String[] actual = ex003.iceCreamFlavours();
 
+        assertArrayEquals(expected, actual);
+    }
 }
