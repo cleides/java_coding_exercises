@@ -4,8 +4,10 @@ import java.util.List;
 
 public class Exercise001 {
     public String capitalizeWord(String word) {
-        String result = word.substring(0, 1).toUpperCase() + word.substring(1);
-        return result;
+        if (word == null || word.isEmpty()) {
+            return word;
+        }
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 
     public String generateInitials(String firstName, String lastName) {
@@ -16,19 +18,16 @@ public class Exercise001 {
 
     public double addVat(double originalPrice, double vatRate) {
         double result = (originalPrice + (originalPrice * vatRate / 100.0d));
-        //round to 2 decimal places
         result = (double) Math.round(result * 100.0d) / 100.0d;
         return result;
     }
 
     public String reverse(String sentence) {
-        String sentenceReversed = new StringBuilder(sentence).reverse().toString();
-        return sentenceReversed;
+        return new StringBuilder(sentence).reverse().toString();
     }
 
     public int countLinuxUsers(List<User> users) {
         int count = 0;
-        //I had used the for loop but IntelliJ suggested this improvement.
         for (User u : users) {
             String osType = u.getType();
             if (osType.equals("Linux")) {
