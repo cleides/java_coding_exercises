@@ -14,7 +14,8 @@ public class Exercise004Test {
     @Test
     public void checkGetDateTimeWhenDateIsSpecified() {
 
-        Exercise004 ex004 = new Exercise004(LocalDate.of(2021, Month.JULY, 19));
+        LocalDate d = LocalDate.of(2021, Month.JULY, 19);
+        Exercise004 ex004 = new Exercise004(d);
         LocalDateTime expected = LocalDateTime.of(2053, Month.MARCH, 27, 1, 46, 40);
 
         assertEquals(expected, ex004.getDateTime());
