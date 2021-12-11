@@ -5,18 +5,18 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Exercise004 {
-    LocalDateTime t;
-
+    private LocalDateTime dateTimePlusABillionSeconds;
+    private final long GIGA_SECONDS = 1_000_000_000L;
     public Exercise004(LocalDate date) {
-        t = LocalDateTime.of(date, LocalTime.MIDNIGHT);
-        t = t.plusSeconds(1_000_000_000L);
+        dateTimePlusABillionSeconds = LocalDateTime.of(date, LocalTime.MIDNIGHT);
+        dateTimePlusABillionSeconds = dateTimePlusABillionSeconds.plusSeconds(GIGA_SECONDS);
     }
 
     public Exercise004(LocalDateTime dateTime) {
-      //dateTime =
+        dateTimePlusABillionSeconds = dateTime.plusSeconds(GIGA_SECONDS);
     }
 
     public LocalDateTime getDateTime() {
-        return t;
+        return dateTimePlusABillionSeconds;
     }
 }
