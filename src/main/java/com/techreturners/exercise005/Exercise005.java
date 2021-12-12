@@ -13,7 +13,13 @@ public class Exercise005 {
         }
 
         boolean result = areLettersAllSpaces();
-        return result;
+        for (int i = 0; i < letters.length; i++) {
+            if (letters[i] != ' ') {
+                return 0;
+            }
+        }
+
+
     }
 
     private boolean areLettersAllSpaces() {
