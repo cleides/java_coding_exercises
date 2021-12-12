@@ -15,11 +15,10 @@ public class Exercise005 {
         boolean result = areLettersAllSpaces();
         for (int i = 0; i < letters.length; i++) {
             if (letters[i] != ' ') {
-                return 0;
+                return false;
             }
         }
-
-
+        return result;
     }
 
     private boolean areLettersAllSpaces() {
